@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit — Dead Dads Club</title>
+  <meta name="description" content="Send us your digital love letter." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <nav class="nav fade-in fade-in-1">
+      <div class="nav-inner">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="submit.html" class="active">Submit</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="submit-page fade-in fade-in-2">
+
+      <h1 class="submit-title">Send us your digital love letter.</h1>
+      <p class="submit-intro">
+        If you've lost someone you loved and there's an object that holds them, we'd love to hear about it. Send us a letter, a drawing, a photograph, a recipe, a recording &mdash; anything that helps you stay in conversation with them.
+      </p>
+
+      <!--
+        TO CONNECT FORMSPREE:
+        1. Go to formspree.io, sign in, create a new form for this site.
+        2. Copy your form endpoint URL (looks like https://formspree.io/f/xxxxxxx).
+        3. Paste it into the action="" attribute below, replacing the placeholder.
+        4. Save and commit. The form will start sending submissions to your Formspree inbox.
+        For file uploads (drawings/photos), Formspree requires their paid tier.
+        If you're on the free tier, the file input still works locally but won't upload.
+      -->
+      <form
+        class="submit-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="field">
+          <label for="dedicatee">Who is the letter for?</label>
+          <input
+            type="text"
+            id="dedicatee"
+            name="dedicatee"
+            placeholder="e.g. my dad, my grandmother, my friend"
+          />
+        </div>
+
+        <div class="field">
+          <label for="object">The object</label>
+          <input
+            type="text"
+            id="object"
+            name="object"
+            placeholder="e.g. a thermos, a wooden spoon, a watch"
+          />
+        </div>
+
+        <div class="field">
+          <label for="letter">Your letter</label>
+          <textarea
+            id="letter"
+            name="letter"
+            rows="10"
+            placeholder="Write as much or as little as you'd like."
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label for="attachment">Attachment <span class="field-hint">(optional &mdash; drawing, photo, recipe, audio)</span></label>
+          <input type="file" id="attachment" name="attachment" accept="image/*,audio/*,.pdf,.doc,.docx,.txt" />
+        </div>
+
+        <div class="field field-submit">
+          <button type="submit" class="submit-button">Send</button>
+        </div>
+
+        <!-- Honeypot for spam protection -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      </form>
+
+      <p class="submit-fallback">
+        Or email us directly at <a href="mailto:hello@deaddadsclub.org">hello@deaddadsclub.org</a>.
+      </p>
+
+    </main>
+
+    <footer class="footer">
+      <a href="index.html" class="footer-link">&larr; Back to the letters</a>
+      <span class="footer-meta">Dead Dads Club</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
